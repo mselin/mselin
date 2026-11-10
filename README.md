@@ -37,7 +37,7 @@ built, not as a status report.
 ```mermaid
 flowchart LR
   inet((Internet)) --> fw[Firewall / router<br/>OPNsense · Suricata · CrowdSec]
-  vpn[(Mesh VPN<br/>Tailscale · NetBird)] -. all app access .-> ingress
+  vpn[(Mesh VPN<br/>Tailscale · NetBird)] -- all app access --> fw
 
   fw --> sw[Segmented network<br/>mgmt · trusted · guest · IoT · DMZ]
 
