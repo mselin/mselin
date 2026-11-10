@@ -42,7 +42,7 @@
   <!-- 3: status -->
   <g clip-path="url(#c3)"><text x="28" y="268"><tspan class="p">❯ </tspan><tspan class="c">lab status</tspan></text></g>
   <g class="out"><animate attributeName="opacity" to="1" begin="5.3s" dur="0.2s" fill="freeze"/>
-    <text x="28" y="298"><tspan class="p">● </tspan><tspan class="o">platform up   </tspan><tspan class="p">● </tspan><tspan class="o">backups replicated   </tspan><tspan class="a">◐ </tspan><tspan class="o">cluster under construction</tspan></text>
-    <rect class="cur" x="712" y="283" width="10" height="19" fill="#3ddc97"/>
+    <text x="28" y="298"><tspan class="p">● </tspan><tspan class="o">platform up   </tspan><tspan class="p">● </tspan><tspan class="o">backups replicated   </tspan><tspan class="a">◐ </tspan><tspan class="o">migrating to Kubernetes</tspan></text>
+    <rect class="cur" x="684" y="283" width="10" height="19" fill="#3ddc97"/>
   </g>
 </svg>

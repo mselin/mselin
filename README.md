@@ -15,7 +15,7 @@ I build and run infrastructure for a living, and then go home and do it again fo
 recent work lives in a self-hosted Forgejo, so this profile is the public window into it: how the
 lab is put together, what it runs, and the bits of code that make it out into the open.
 
-- 🔭 **Now:** bringing up a Talos Kubernetes cluster with Flux GitOps, and moving secrets into OpenBao
+- 🔭 **Now:** adding services to a Talos Kubernetes cluster with Flux GitOps and moving more and more workloads onto it, plus getting secrets into OpenBao
 - 🔐 **Care about:** least privilege, encrypted backups that are actually restore-tested, boring reliability
 - 🎛️ **Also:** retro audio. C64 SID chips, MIDI and hardware synths
 
@@ -26,7 +26,8 @@ can't reach anything, and nothing is public except through a tunnel.
 
 Right now one platform box carries storage, apps, identity and observability. That makes it a single
 point of failure, and it is there because of budget, not because it is the design I would choose.
-The Kubernetes cluster is the way out of it, one mini PC at a time.
+The Kubernetes cluster is the way out of it: new services land there, and existing ones move over
+bit by bit.
 
 ```mermaid
 flowchart LR
@@ -38,13 +39,13 @@ flowchart LR
   sw --> nas[Platform<br/>TrueNAS SCALE · ZFS]
   sw --> dns[DNS<br/>AdGuard Home ×2 · Unbound]
   sw --> dmz[DMZ hypervisor<br/>Proxmox VE]
-  sw -. planned .-> k8s[Kubernetes<br/>Talos · Cilium · Flux]
+  sw --> k8s[Kubernetes<br/>Talos · Cilium · Flux]
 
   nas --> ingress[Traefik + Authentik SSO]
   nas --> obs[Observability<br/>Prometheus · Grafana · Loki]
   nas --> sec[Security<br/>Wazuh · CrowdSec · OpenBao]
   nas -- encrypted ZFS replication --> bak[Backup target<br/>going offsite]
-  nas -. iSCSI .-> k8s
+  nas -. workloads migrating .-> k8s
 ```
 
 | Layer | What runs there |
@@ -55,7 +56,7 @@ flowchart LR
 | **Observability** | Prometheus, Alertmanager, Grafana, Loki + Alloy, Uptime Kuma, ntfy |
 | **Security** | CrowdSec, Wazuh, OpenBao 🚧, UPS-managed graceful shutdown with NUT |
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
-| **Kubernetes** 🚧 | Talos Linux, Cilium, Flux, cert-manager, External Secrets, Renovate, Trivy |
+| **Kubernetes** 🚧 | Talos Linux, Cilium, Flux, cert-manager, External Secrets, Renovate, Trivy. Growing: services are being added and migrated from the platform box |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
 | **Self-hosted** | Forgejo, Nextcloud, Immich, Jellyfin, Navidrome, BookStack, Home Assistant 📋 |
 | **Local AI** | Ollama, LiteLLM gateway, a GPU workstation for inference |
