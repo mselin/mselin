@@ -132,8 +132,6 @@ the same way as here. Each name links to the project behind it.
 
 | Project | What it is |
 |---|---|
-| [sidplay4-asidmod](https://github.com/mselin/sidplay4-asidmod) | SIDPLAY with ASID output, for playing C64 SID tunes on real SID hardware over MIDI |
-| [machine-learning-udacity](https://github.com/mselin/machine-learning-udacity) | Coursework and notebooks from Udacity's machine learning programme |
 | Homelab infrastructure | Compose stacks, GitOps manifests and runbooks. Lives in self-hosted Forgejo |
 
 <div align="center">
