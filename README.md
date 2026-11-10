@@ -53,14 +53,25 @@ flowchart LR
 | **Edge** | OPNsense, VLAN segmentation, hard-walled DMZ, Suricata IDS, CrowdSec bouncers |
 | **Remote access** | Mesh VPN only (Tailscale, moving to self-hosted NetBird). No apps published to the internet |
 | **Platform** | TrueNAS SCALE, ZFS (RAIDZ2 + SSD mirror, native encryption), Docker Compose apps kept in Git |
-| **Ingress and identity** | Traefik, Authentik (SSO / OIDC in front of everything), Vaultwarden |
+| **Ingress and identity** | Traefik, Authentik (SSO / OIDC in front of everything) |
 | **Observability** | Prometheus, Alertmanager, Grafana, Loki + Alloy, Uptime Kuma, ntfy |
-| **Security** | CrowdSec, Suricata, Wazuh, OpenBao 🚧, UPS-managed graceful shutdown with NUT |
+| **Security** | CrowdSec, Suricata, Wazuh, Vaultwarden, OpenBao 🚧, UPS-managed graceful shutdown with NUT |
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
 | **Kubernetes** | Talos Linux, Cilium, Flux, cert-manager, External Secrets, Renovate, Trivy. In use, with more services still to move over from the platform box |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
-| **Self-hosted** | Forgejo, Nextcloud, Immich, Jellyfin, Navidrome, BookStack, Home Assistant 📋 |
-| **Local AI** | Ollama, LiteLLM gateway, a GPU workstation for inference |
+
+### App stack
+
+The services that make the lab worth running, all behind SSO and kept as Compose files in Git.
+
+| Area | Apps |
+|---|---|
+| **Media** | Jellyfin, Navidrome, Lyrion, Audiobookshelf, Immich, Kavita, Tdarr |
+| **Productivity and docs** | Nextcloud, Forgejo, BookStack, Trilium, Joplin, Wallabag, Karakeep, Mealie, Homebox, Draw.io, Syncthing |
+| **Dev and data** | Code Server, JupyterLab, pgAdmin |
+| **Dashboards and tools** | Homepage, Portainer, Speedtest Tracker |
+| **Local AI** | Ollama, LiteLLM gateway, AnythingLLM, a GPU workstation for inference |
+| **Home automation** | Home Assistant 📋 |
 
 <sub>🚧 in progress · 📋 planned</sub>
 
