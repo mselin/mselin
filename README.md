@@ -15,25 +15,27 @@ I build and run infrastructure for a living, and then go home and do it again fo
 recent work lives in a self-hosted Forgejo, so this profile is the public window into it: how the
 lab is put together, what it runs, and the bits of code that make it out into the open.
 
-- 🔭 **Now:** running a Talos Kubernetes cluster with Flux GitOps and moving more and more workloads onto it, plus getting secrets into OpenBao
-- 🤖 **AI stack:** local models on llama-swap (moving fast off Ollama), LiteLLM, AnythingLLM and Strata, with improved observability and sandboxing
+- 🔭 **Running:** a Talos Kubernetes cluster with Flux GitOps next to a ZFS-backed app platform, with secrets in OpenBao
+- 🤖 **AI stack:** local models on llama-swap and Ollama behind LiteLLM, with AnythingLLM and Strata, with improved observability and sandboxing
 - 🔐 **Care about:** least privilege, encrypted backups that are actually restore-tested, boring reliability
-- 🎛️ **Also:** retro audio. C64 SID chips, MIDI and hardware synths
+- 🎮 **Also:** Linux gaming, and retro audio: C64 SID chips, MIDI and hardware synths
 
 ## 🏠 The homelab
 
 This is a learning environment first. A firewall splits the network into isolated segments, the DMZ
 can't reach anything, and no app is exposed to the internet: everything is reached over a mesh VPN.
 
-Right now one platform box carries storage, apps, identity and observability. That makes it a single
-point of failure, and it is there because of budget, not because it is the design I would choose.
-The Kubernetes cluster is the way out of it: new services land there, and existing ones move over
-bit by bit.
+One platform box carries storage, apps, identity and observability. That makes it a single point of
+failure, and it is there because of budget, not because it is the design I would choose. A Kubernetes
+cluster runs alongside it.
+
+Like any homelab, it is always in a state of flux. Read this page as a sketch of how things are
+built, not as a status report.
 
 ```mermaid
 flowchart LR
   inet((Internet)) --> fw[Firewall / router<br/>OPNsense · Suricata · CrowdSec]
-  vpn[(Mesh VPN<br/>Tailscale → NetBird)] -. all app access .-> ingress
+  vpn[(Mesh VPN<br/>Tailscale · NetBird)] -. all app access .-> ingress
 
   fw --> sw[Segmented network<br/>mgmt · trusted · guest · IoT · DMZ]
 
@@ -45,20 +47,20 @@ flowchart LR
   nas --> ingress[Traefik + Authentik SSO]
   nas --> obs[Observability<br/>Prometheus · Grafana · Loki]
   nas --> sec[Security<br/>Wazuh · CrowdSec · OpenBao]
-  nas -- encrypted ZFS replication --> bak[Backup target<br/>going offsite]
-  nas -. workloads migrating .-> k8s
+  nas -- encrypted ZFS replication --> bak[Offsite backup target]
+  nas -. storage .-> k8s
 ```
 
 | Layer | What runs there |
 |---|---|
-| **Edge** | [OPNsense](https://github.com/opnsense/core), VLAN segmentation, hard-walled DMZ, [Suricata](https://github.com/OISF/suricata) IDS, [CrowdSec](https://github.com/crowdsecurity/crowdsec) bouncers |
-| **Remote access** | Mesh VPN only ([Tailscale](https://github.com/tailscale/tailscale), moving to self-hosted [NetBird](https://github.com/netbirdio/netbird)). No apps published to the internet |
+| **Edge** | [OPNsense](https://github.com/opnsense/core), VLAN segmentation, hard-walled DMZ, [Suricata](https://github.com/OISF/suricata) IDS, [CrowdSec](https://github.com/crowdsecurity/crowdsec) bouncers, Ubiquiti UniFi Wi-Fi managed from the UniFi Network controller |
+| **Remote access** | Mesh VPN only ([Tailscale](https://github.com/tailscale/tailscale) and self-hosted [NetBird](https://github.com/netbirdio/netbird)). No apps published to the internet |
 | **Platform** | [TrueNAS SCALE](https://github.com/truenas/middleware), ZFS (RAIDZ2 + SSD mirror, native encryption), Docker Compose apps kept in Git |
 | **Ingress and identity** | [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik) (SSO / OIDC in front of everything) |
 | **Observability** | [Prometheus](https://github.com/prometheus/prometheus), [Alertmanager](https://github.com/prometheus/alertmanager), [Grafana](https://github.com/grafana/grafana), [Loki](https://github.com/grafana/loki) + [Alloy](https://github.com/grafana/alloy), [Uptime Kuma](https://github.com/louislam/uptime-kuma), [ntfy](https://github.com/binwiederhier/ntfy) |
-| **Security** | [CrowdSec](https://github.com/crowdsecurity/crowdsec), [Suricata](https://github.com/OISF/suricata), [Wazuh](https://github.com/wazuh/wazuh), [Vaultwarden](https://github.com/dani-garcia/vaultwarden), [OpenBao](https://github.com/openbao/openbao) 🚧, UPS-managed graceful shutdown with [NUT](https://github.com/networkupstools/nut) |
+| **Security** | [CrowdSec](https://github.com/crowdsecurity/crowdsec), [Suricata](https://github.com/OISF/suricata), [Wazuh](https://github.com/wazuh/wazuh), [Vaultwarden](https://github.com/dani-garcia/vaultwarden), [OpenBao](https://github.com/openbao/openbao), UPS monitored and controlled by [NUT](https://github.com/networkupstools/nut) (upsd) with graceful shutdown |
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
-| **Kubernetes** | [Talos](https://github.com/siderolabs/talos) Linux, [Cilium](https://github.com/cilium/cilium), [Flux](https://github.com/fluxcd/flux2), [cert-manager](https://github.com/cert-manager/cert-manager), [External Secrets](https://github.com/external-secrets/external-secrets), [Renovate](https://github.com/renovatebot/renovate), [Trivy](https://github.com/aquasecurity/trivy). In use, with more services still to move over from the platform box |
+| **Kubernetes** | [Talos](https://github.com/siderolabs/talos) Linux, [Cilium](https://github.com/cilium/cilium), [Flux](https://github.com/fluxcd/flux2), [cert-manager](https://github.com/cert-manager/cert-manager), [External Secrets](https://github.com/external-secrets/external-secrets), [Renovate](https://github.com/renovatebot/renovate), [Trivy](https://github.com/aquasecurity/trivy) |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
 
 ### App stack
@@ -68,13 +70,11 @@ the same way as here. Each name links to the project behind it.
 
 | Group | Apps |
 |---|---|
-| **AI** | [llama-swap](https://github.com/mostlygeek/llama-swap) (taking over from [Ollama](https://github.com/ollama/ollama)), [LiteLLM](https://github.com/BerriAI/litellm) gateway, [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), Strata (local LLM on a GPU workstation). Being rebuilt with improved observability and sandboxing |
+| **AI** | [llama-swap](https://github.com/mostlygeek/llama-swap), [Ollama](https://github.com/ollama/ollama), [LiteLLM](https://github.com/BerriAI/litellm) gateway, [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), Strata. Built with improved observability and sandboxing |
 | **Tools** | [Forgejo](https://codeberg.org/forgejo/forgejo), [Nextcloud](https://github.com/nextcloud/server), [BookStack](https://github.com/BookStackApp/BookStack), [Trilium Notes](https://github.com/TriliumNext/Trilium), [Joplin](https://github.com/laurent22/joplin), [Wallabag](https://github.com/wallabag/wallabag), [Karakeep](https://github.com/karakeep-app/karakeep), [Mealie](https://github.com/mealie-recipes/mealie), [Homebox](https://github.com/sysadminsmedia/homebox), [Draw.io](https://github.com/jgraph/drawio), [Code Server](https://github.com/coder/code-server), [JupyterLab](https://github.com/jupyterlab/jupyterlab), [pgAdmin](https://github.com/pgadmin-org/pgadmin4), [Syncthing](https://github.com/syncthing/syncthing), [Filebrowser](https://github.com/filebrowser/filebrowser), [Vaultwarden](https://github.com/dani-garcia/vaultwarden), [Speedtest Tracker](https://github.com/alexjustesen/speedtest-tracker), [Open Speedtest](https://github.com/openspeedtest/Speed-Test), [Domain Watchdog](https://github.com/maelgangloff/domain-watchdog) |
 | **Media** | [Jellyfin](https://github.com/jellyfin/jellyfin), [Jellystat](https://github.com/CyferShepard/Jellystat), [Navidrome](https://github.com/navidrome/navidrome), [Lyrion](https://github.com/LMS-Community/slimserver), [Audiobookshelf](https://github.com/advplyr/audiobookshelf), [Kavita](https://github.com/Kareadita/Kavita), [Immich](https://github.com/immich-app/immich), [Tdarr](https://github.com/HaveAGitGat/Tdarr), [MeTube](https://github.com/alexta69/metube) |
-| **Monitoring** | [Prometheus](https://github.com/prometheus/prometheus), [Alertmanager](https://github.com/prometheus/alertmanager), [Grafana](https://github.com/grafana/grafana), [Uptime Kuma](https://github.com/louislam/uptime-kuma), [ntfy](https://github.com/binwiederhier/ntfy), [Wazuh](https://github.com/wazuh/wazuh), [CrowdSec](https://github.com/crowdsecurity/crowdsec), [Portainer](https://github.com/portainer/portainer), [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik), [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) ×2, plus dashboards for the firewall, NAS, hypervisor, Wi-Fi controller and UPS |
-| **Home automation** | [Home Assistant](https://github.com/home-assistant/core) 📋 |
-
-<sub>🚧 in progress · 📋 planned</sub>
+| **Monitoring** | [Prometheus](https://github.com/prometheus/prometheus), [Alertmanager](https://github.com/prometheus/alertmanager), [Grafana](https://github.com/grafana/grafana), [Uptime Kuma](https://github.com/louislam/uptime-kuma), [ntfy](https://github.com/binwiederhier/ntfy), [Wazuh](https://github.com/wazuh/wazuh), [CrowdSec](https://github.com/crowdsecurity/crowdsec), [Portainer](https://github.com/portainer/portainer), [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik), [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) ×2, UniFi Network controller, NUT, plus OPNsense, TrueNAS and Proxmox dashboards |
+| **Home automation** | [Home Assistant](https://github.com/home-assistant/core) |
 
 ## 🧰 Toolbox
 
@@ -97,6 +97,7 @@ the same way as here. Each name links to the project behind it.
 <img alt="Cloudflare" src="https://img.shields.io/badge/Cloudflare-0d1420?style=flat-square&logo=cloudflare&logoColor=white">
 <img alt="NetBird" src="https://img.shields.io/badge/NetBird-0d1420?style=flat-square&logo=netbird&logoColor=white">
 <img alt="Tailscale" src="https://img.shields.io/badge/Tailscale-0d1420?style=flat-square&logo=tailscale&logoColor=white">
+<img alt="UniFi" src="https://img.shields.io/badge/UniFi-0d1420?style=flat-square&logo=ubiquiti&logoColor=white">
 <img alt="Prometheus" src="https://img.shields.io/badge/Prometheus-0d1420?style=flat-square&logo=prometheus&logoColor=white">
 <img alt="Grafana" src="https://img.shields.io/badge/Grafana-0d1420?style=flat-square&logo=grafana&logoColor=white">
 <img alt="Forgejo" src="https://img.shields.io/badge/Forgejo-0d1420?style=flat-square&logo=forgejo&logoColor=white">
@@ -106,6 +107,7 @@ the same way as here. Each name links to the project behind it.
 <img alt="llama-swap" src="https://img.shields.io/badge/llama--swap-0d1420?style=flat-square">
 <img alt="LiteLLM" src="https://img.shields.io/badge/LiteLLM-0d1420?style=flat-square">
 <img alt="AnythingLLM" src="https://img.shields.io/badge/AnythingLLM-0d1420?style=flat-square">
+<img alt="Linux gaming" src="https://img.shields.io/badge/Linux_gaming-0d1420?style=flat-square&logo=steam&logoColor=white">
 </p>
 
 ## 📦 Projects
@@ -114,7 +116,7 @@ the same way as here. Each name links to the project behind it.
 |---|---|
 | [sidplay4-asidmod](https://github.com/mselin/sidplay4-asidmod) | SIDPLAY with ASID output, for playing C64 SID tunes on real SID hardware over MIDI |
 | [machine-learning-udacity](https://github.com/mselin/machine-learning-udacity) | Coursework and notebooks from Udacity's machine learning programme |
-| Homelab infrastructure | Compose stacks, GitOps manifests and runbooks. Lives in self-hosted Forgejo; public pieces are on their way to [Codeberg](https://codeberg.org/mselin) |
+| Homelab infrastructure | Compose stacks, GitOps manifests and runbooks. Lives in self-hosted Forgejo |
 
 <div align="center">
 
