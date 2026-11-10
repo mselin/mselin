@@ -16,6 +16,7 @@ recent work lives in a self-hosted Forgejo, so this profile is the public window
 lab is put together, what it runs, and the bits of code that make it out into the open.
 
 - 🔭 **Now:** running a Talos Kubernetes cluster with Flux GitOps and moving more and more workloads onto it, plus getting secrets into OpenBao
+- 🤖 **AI stack:** local models on llama-swap (moving fast off Ollama), LiteLLM, AnythingLLM and Strata, with improved observability and sandboxing
 - 🔐 **Care about:** least privilege, encrypted backups that are actually restore-tested, boring reliability
 - 🎛️ **Also:** retro audio. C64 SID chips, MIDI and hardware synths
 
@@ -67,7 +68,7 @@ the same way as here. Each name links to the project behind it.
 
 | Group | Apps |
 |---|---|
-| **AI** | [Ollama](https://github.com/ollama/ollama), [LiteLLM](https://github.com/BerriAI/litellm) gateway, [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), Strata (local LLM on a GPU workstation) |
+| **AI** | [llama-swap](https://github.com/mostlygeek/llama-swap) (taking over from [Ollama](https://github.com/ollama/ollama)), [LiteLLM](https://github.com/BerriAI/litellm) gateway, [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), Strata (local LLM on a GPU workstation). Being rebuilt with improved observability and sandboxing |
 | **Tools** | [Forgejo](https://codeberg.org/forgejo/forgejo), [Nextcloud](https://github.com/nextcloud/server), [BookStack](https://github.com/BookStackApp/BookStack), [Trilium Notes](https://github.com/TriliumNext/Trilium), [Joplin](https://github.com/laurent22/joplin), [Wallabag](https://github.com/wallabag/wallabag), [Karakeep](https://github.com/karakeep-app/karakeep), [Mealie](https://github.com/mealie-recipes/mealie), [Homebox](https://github.com/sysadminsmedia/homebox), [Draw.io](https://github.com/jgraph/drawio), [Code Server](https://github.com/coder/code-server), [JupyterLab](https://github.com/jupyterlab/jupyterlab), [pgAdmin](https://github.com/pgadmin-org/pgadmin4), [Syncthing](https://github.com/syncthing/syncthing), [Filebrowser](https://github.com/filebrowser/filebrowser), [Vaultwarden](https://github.com/dani-garcia/vaultwarden), [Speedtest Tracker](https://github.com/alexjustesen/speedtest-tracker), [Open Speedtest](https://github.com/openspeedtest/Speed-Test), [Domain Watchdog](https://github.com/maelgangloff/domain-watchdog) |
 | **Media** | [Jellyfin](https://github.com/jellyfin/jellyfin), [Jellystat](https://github.com/CyferShepard/Jellystat), [Navidrome](https://github.com/navidrome/navidrome), [Lyrion](https://github.com/LMS-Community/slimserver), [Audiobookshelf](https://github.com/advplyr/audiobookshelf), [Kavita](https://github.com/Kareadita/Kavita), [Immich](https://github.com/immich-app/immich), [Tdarr](https://github.com/HaveAGitGat/Tdarr), [MeTube](https://github.com/alexta69/metube) |
 | **Monitoring** | [Prometheus](https://github.com/prometheus/prometheus), [Alertmanager](https://github.com/prometheus/alertmanager), [Grafana](https://github.com/grafana/grafana), [Uptime Kuma](https://github.com/louislam/uptime-kuma), [ntfy](https://github.com/binwiederhier/ntfy), [Wazuh](https://github.com/wazuh/wazuh), [CrowdSec](https://github.com/crowdsecurity/crowdsec), [Portainer](https://github.com/portainer/portainer), [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik), [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) ×2, plus dashboards for the firewall, NAS, hypervisor, Wi-Fi controller and UPS |
@@ -79,6 +80,8 @@ the same way as here. Each name links to the project behind it.
 
 <p>
 <img alt="Linux" src="https://img.shields.io/badge/Linux-0d1420?style=flat-square&logo=linux&logoColor=white">
+<img alt="CachyOS" src="https://img.shields.io/badge/CachyOS-0d1420?style=flat-square&logo=cachyos&logoColor=white">
+<img alt="macOS" src="https://img.shields.io/badge/macOS-0d1420?style=flat-square&logo=macos&logoColor=white">
 <img alt="Debian" src="https://img.shields.io/badge/Debian-0d1420?style=flat-square&logo=debian&logoColor=white">
 <img alt="NixOS" src="https://img.shields.io/badge/NixOS-0d1420?style=flat-square&logo=nixos&logoColor=white">
 <img alt="OPNsense" src="https://img.shields.io/badge/OPNsense-0d1420?style=flat-square&logo=opnsense&logoColor=white">
@@ -92,13 +95,17 @@ the same way as here. Each name links to the project behind it.
 <img alt="Traefik" src="https://img.shields.io/badge/Traefik-0d1420?style=flat-square&logo=traefikproxy&logoColor=white">
 <img alt="Authentik" src="https://img.shields.io/badge/Authentik-0d1420?style=flat-square&logo=authentik&logoColor=white">
 <img alt="Cloudflare" src="https://img.shields.io/badge/Cloudflare-0d1420?style=flat-square&logo=cloudflare&logoColor=white">
+<img alt="NetBird" src="https://img.shields.io/badge/NetBird-0d1420?style=flat-square&logo=netbird&logoColor=white">
+<img alt="Tailscale" src="https://img.shields.io/badge/Tailscale-0d1420?style=flat-square&logo=tailscale&logoColor=white">
 <img alt="Prometheus" src="https://img.shields.io/badge/Prometheus-0d1420?style=flat-square&logo=prometheus&logoColor=white">
 <img alt="Grafana" src="https://img.shields.io/badge/Grafana-0d1420?style=flat-square&logo=grafana&logoColor=white">
 <img alt="Forgejo" src="https://img.shields.io/badge/Forgejo-0d1420?style=flat-square&logo=forgejo&logoColor=white">
 <img alt="Renovate" src="https://img.shields.io/badge/Renovate-0d1420?style=flat-square&logo=renovate&logoColor=white">
 <img alt="Python" src="https://img.shields.io/badge/Python-0d1420?style=flat-square&logo=python&logoColor=white">
 <img alt="Bash" src="https://img.shields.io/badge/Bash-0d1420?style=flat-square&logo=gnubash&logoColor=white">
-<img alt="Ollama" src="https://img.shields.io/badge/Ollama-0d1420?style=flat-square&logo=ollama&logoColor=white">
+<img alt="llama-swap" src="https://img.shields.io/badge/llama--swap-0d1420?style=flat-square">
+<img alt="LiteLLM" src="https://img.shields.io/badge/LiteLLM-0d1420?style=flat-square">
+<img alt="AnythingLLM" src="https://img.shields.io/badge/AnythingLLM-0d1420?style=flat-square">
 </p>
 
 ## 📦 Projects
