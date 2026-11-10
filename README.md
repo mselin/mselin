@@ -66,7 +66,7 @@ flowchart LR
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
 | **Containers and dev environments** | [Docker](https://github.com/moby/moby), [Podman](https://github.com/containers/podman), [Dev Containers](https://github.com/devcontainers/spec) for reproducible, sandboxed project environments |
 | **Offline resilience** | Built to keep working through a long internet outage: local mirrors of the important upstream repos in Forgejo, and offline copies of reference wikis such as Wikipedia and iFixit |
-| **Languages** | [Python](https://github.com/python/cpython), [TypeScript](https://github.com/microsoft/TypeScript), [Go](https://github.com/golang/go), [C#](https://github.com/dotnet/csharplang), Bash |
+| **Languages and frameworks** | [Python](https://github.com/python/cpython), [TypeScript](https://github.com/microsoft/TypeScript), [Go](https://github.com/golang/go), [C#](https://github.com/dotnet/csharplang), Bash, [Node.js](https://github.com/nodejs/node), [React](https://github.com/facebook/react) |
 | **Daily drivers** | CachyOS on the desktop for work and Linux gaming, macOS on the laptop, NixOS, and Windows, though less and less these days |
 | **Shell and dotfiles** | [zsh](https://github.com/zsh-users/zsh) with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), [tmux](https://github.com/tmux/tmux) with [tpm](https://github.com/tmux-plugins/tpm) plugins such as [continuum](https://github.com/tmux-plugins/tmux-continuum) and [resurrect](https://github.com/tmux-plugins/tmux-resurrect) for sessions that survive reboots, [chezmoi](https://github.com/twpayne/chezmoi) to keep dotfiles in sync across machines |
 
@@ -117,6 +117,8 @@ the same way as here. Each name links to the project behind it.
 <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-0d1420?style=flat-square&logo=typescript&logoColor=white">
 <img alt="Go" src="https://img.shields.io/badge/Go-0d1420?style=flat-square&logo=go&logoColor=white">
 <img alt="C#" src="https://img.shields.io/badge/C%23-0d1420?style=flat-square&logo=dotnet&logoColor=white">
+<img alt="Node.js" src="https://img.shields.io/badge/Node.js-0d1420?style=flat-square&logo=nodedotjs&logoColor=white">
+<img alt="React" src="https://img.shields.io/badge/React-0d1420?style=flat-square&logo=react&logoColor=white">
 <img alt="Bash" src="https://img.shields.io/badge/Bash-0d1420?style=flat-square&logo=gnubash&logoColor=white">
 <img alt="zsh" src="https://img.shields.io/badge/zsh-0d1420?style=flat-square&logo=zsh&logoColor=white">
 <img alt="Oh My Zsh" src="https://img.shields.io/badge/Oh_My_Zsh-0d1420?style=flat-square&logo=ohmyzsh&logoColor=white">
