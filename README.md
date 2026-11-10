@@ -48,7 +48,7 @@ flowchart LR
 
   nas --> ingress[Traefik + Authentik SSO]
   nas --> obs[Observability<br/>Prometheus · Grafana · Loki]
-  nas --> sec[Security<br/>Wazuh · CrowdSec · OpenBao]
+  nas --> sec[Security<br/>Wazuh · CrowdSec · OpenBao · Vaultwarden]
   nas -- encrypted ZFS replication --> bak[Offsite backup target]
   nas -. storage .-> k8s
 ```
