@@ -31,7 +31,7 @@ bit by bit.
 
 ```mermaid
 flowchart LR
-  inet((Internet)) --> fw[Firewall / router<br/>OPNsense · CrowdSec]
+  inet((Internet)) --> fw[Firewall / router<br/>OPNsense · Suricata · CrowdSec]
   vpn[(Mesh VPN<br/>Tailscale → NetBird)] -. all app access .-> ingress
 
   fw --> sw[Segmented network<br/>mgmt · trusted · guest · IoT · DMZ]
@@ -50,12 +50,12 @@ flowchart LR
 
 | Layer | What runs there |
 |---|---|
-| **Edge** | OPNsense, VLAN segmentation, hard-walled DMZ, CrowdSec bouncers |
+| **Edge** | OPNsense, VLAN segmentation, hard-walled DMZ, Suricata IDS, CrowdSec bouncers |
 | **Remote access** | Mesh VPN only (Tailscale, moving to self-hosted NetBird). No apps published to the internet |
 | **Platform** | TrueNAS SCALE, ZFS (RAIDZ2 + SSD mirror, native encryption), Docker Compose apps kept in Git |
 | **Ingress and identity** | Traefik, Authentik (SSO / OIDC in front of everything), Vaultwarden |
 | **Observability** | Prometheus, Alertmanager, Grafana, Loki + Alloy, Uptime Kuma, ntfy |
-| **Security** | CrowdSec, Wazuh, OpenBao 🚧, UPS-managed graceful shutdown with NUT |
+| **Security** | CrowdSec, Suricata, Wazuh, OpenBao 🚧, UPS-managed graceful shutdown with NUT |
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
 | **Kubernetes** | Talos Linux, Cilium, Flux, cert-manager, External Secrets, Renovate, Trivy. In use, with more services still to move over from the platform box |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
