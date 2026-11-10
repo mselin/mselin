@@ -64,6 +64,7 @@ flowchart LR
 | **Kubernetes** | [Talos](https://github.com/siderolabs/talos) Linux, [Cilium](https://github.com/cilium/cilium), [Flux](https://github.com/fluxcd/flux2), [cert-manager](https://github.com/cert-manager/cert-manager), [External Secrets](https://github.com/external-secrets/external-secrets), [Renovate](https://github.com/renovatebot/renovate), [Trivy](https://github.com/aquasecurity/trivy) |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
 | **Containers and dev environments** | [Docker](https://github.com/moby/moby), [Podman](https://github.com/containers/podman), [Dev Containers](https://github.com/devcontainers/spec) for reproducible, sandboxed project environments |
+| **Daily drivers** | CachyOS on the desktop for work and Linux gaming, macOS on the laptop, NixOS, and Windows, though less and less these days |
 | **Shell and dotfiles** | [zsh](https://github.com/zsh-users/zsh) with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), [tmux](https://github.com/tmux/tmux) with [tpm](https://github.com/tmux-plugins/tpm) plugins such as [continuum](https://github.com/tmux-plugins/tmux-continuum) and [resurrect](https://github.com/tmux-plugins/tmux-resurrect) for sessions that survive reboots, [chezmoi](https://github.com/twpayne/chezmoi) to keep dotfiles in sync across machines |
 
 ### App stack
@@ -85,6 +86,7 @@ the same way as here. Each name links to the project behind it.
 <img alt="Linux" src="https://img.shields.io/badge/Linux-0d1420?style=flat-square&logo=linux&logoColor=white">
 <img alt="CachyOS" src="https://img.shields.io/badge/CachyOS-0d1420?style=flat-square&logo=cachyos&logoColor=white">
 <img alt="macOS" src="https://img.shields.io/badge/macOS-0d1420?style=flat-square&logo=macos&logoColor=white">
+<img alt="Windows" src="https://img.shields.io/badge/Windows-0d1420?style=flat-square">
 <img alt="Debian" src="https://img.shields.io/badge/Debian-0d1420?style=flat-square&logo=debian&logoColor=white">
 <img alt="NixOS" src="https://img.shields.io/badge/NixOS-0d1420?style=flat-square&logo=nixos&logoColor=white">
 <img alt="OPNsense" src="https://img.shields.io/badge/OPNsense-0d1420?style=flat-square&logo=opnsense&logoColor=white">
