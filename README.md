@@ -62,6 +62,7 @@ flowchart LR
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
 | **Kubernetes** | [Talos](https://github.com/siderolabs/talos) Linux, [Cilium](https://github.com/cilium/cilium), [Flux](https://github.com/fluxcd/flux2), [cert-manager](https://github.com/cert-manager/cert-manager), [External Secrets](https://github.com/external-secrets/external-secrets), [Renovate](https://github.com/renovatebot/renovate), [Trivy](https://github.com/aquasecurity/trivy) |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
+| **Containers and dev environments** | [Docker](https://github.com/moby/moby), [Podman](https://github.com/containers/podman), [Dev Containers](https://github.com/devcontainers/spec) for reproducible, sandboxed project environments |
 | **Shell and dotfiles** | [zsh](https://github.com/zsh-users/zsh) with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), [tmux](https://github.com/tmux/tmux) with [tpm](https://github.com/tmux-plugins/tpm) plugins such as [continuum](https://github.com/tmux-plugins/tmux-continuum) and [resurrect](https://github.com/tmux-plugins/tmux-resurrect) for sessions that survive reboots, [chezmoi](https://github.com/twpayne/chezmoi) to keep dotfiles in sync across machines |
 
 ### App stack
@@ -89,6 +90,8 @@ the same way as here. Each name links to the project behind it.
 <img alt="TrueNAS" src="https://img.shields.io/badge/TrueNAS-0d1420?style=flat-square&logo=truenas&logoColor=white">
 <img alt="Proxmox" src="https://img.shields.io/badge/Proxmox-0d1420?style=flat-square&logo=proxmox&logoColor=white">
 <img alt="Docker" src="https://img.shields.io/badge/Docker-0d1420?style=flat-square&logo=docker&logoColor=white">
+<img alt="Podman" src="https://img.shields.io/badge/Podman-0d1420?style=flat-square&logo=podman&logoColor=white">
+<img alt="Dev Containers" src="https://img.shields.io/badge/Dev_Containers-0d1420?style=flat-square&logo=devcontainers&logoColor=white">
 <img alt="Kubernetes" src="https://img.shields.io/badge/Kubernetes-0d1420?style=flat-square&logo=kubernetes&logoColor=white">
 <img alt="Talos" src="https://img.shields.io/badge/Talos-0d1420?style=flat-square&logo=talos&logoColor=white">
 <img alt="Flux" src="https://img.shields.io/badge/Flux-0d1420?style=flat-square&logo=flux&logoColor=white">
