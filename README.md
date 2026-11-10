@@ -21,8 +21,12 @@ lab is put together, what it runs, and the bits of code that make it out into th
 
 ## 🏠 The homelab
 
-One platform box carries storage, apps, identity and observability. A firewall splits the network
-into isolated segments, the DMZ can't reach anything, and nothing is public except through a tunnel.
+This is a learning environment first. A firewall splits the network into isolated segments, the DMZ
+can't reach anything, and nothing is public except through a tunnel.
+
+Right now one platform box carries storage, apps, identity and observability. That makes it a single
+point of failure, and it is there because of budget, not because it is the design I would choose.
+The Kubernetes cluster is the way out of it, one mini PC at a time.
 
 ```mermaid
 flowchart LR
