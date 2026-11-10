@@ -22,7 +22,7 @@ lab is put together, what it runs, and the bits of code that make it out into th
 ## 🏠 The homelab
 
 This is a learning environment first. A firewall splits the network into isolated segments, the DMZ
-can't reach anything, and nothing is public except through a tunnel.
+can't reach anything, and no app is exposed to the internet: everything is reached over a mesh VPN.
 
 Right now one platform box carries storage, apps, identity and observability. That makes it a single
 point of failure, and it is there because of budget, not because it is the design I would choose.
@@ -32,7 +32,7 @@ bit by bit.
 ```mermaid
 flowchart LR
   inet((Internet)) --> fw[Firewall / router<br/>OPNsense · CrowdSec]
-  tunnel[(Cloudflare Tunnel)] -. public services .-> ingress
+  vpn[(Mesh VPN<br/>Tailscale → NetBird)] -. all app access .-> ingress
 
   fw --> sw[Segmented network<br/>mgmt · trusted · guest · IoT · DMZ]
 
@@ -50,9 +50,10 @@ flowchart LR
 
 | Layer | What runs there |
 |---|---|
-| **Edge** | OPNsense, VLAN segmentation, hard-walled DMZ, CrowdSec bouncers, WireGuard mesh VPN |
+| **Edge** | OPNsense, VLAN segmentation, hard-walled DMZ, CrowdSec bouncers |
+| **Remote access** | Mesh VPN only (Tailscale, moving to self-hosted NetBird). No apps published to the internet |
 | **Platform** | TrueNAS SCALE, ZFS (RAIDZ2 + SSD mirror, native encryption), Docker Compose apps kept in Git |
-| **Ingress and identity** | Traefik, Authentik (SSO / OIDC in front of everything), Cloudflare Tunnel, Vaultwarden |
+| **Ingress and identity** | Traefik, Authentik (SSO / OIDC in front of everything), Vaultwarden |
 | **Observability** | Prometheus, Alertmanager, Grafana, Loki + Alloy, Uptime Kuma, ntfy |
 | **Security** | CrowdSec, Wazuh, OpenBao 🚧, UPS-managed graceful shutdown with NUT |
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
