@@ -5,7 +5,7 @@
 <br>
 
 [![Website](https://img.shields.io/badge/website-mselin.github.io-3ddc97?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=0d1420)](https://mselin.github.io)
-[![Codeberg](https://img.shields.io/badge/codeberg-mselin-5cc8ff?style=for-the-badge&logo=codeberg&logoColor=white&labelColor=0d1420)](https://codeberg.org/mselin)
+[![Codeberg](https://img.shields.io/badge/codeberg-bjaerni-5cc8ff?style=for-the-badge&logo=codeberg&logoColor=white&labelColor=0d1420)](https://codeberg.org/bjaerni)
 
 </div>
 
