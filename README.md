@@ -137,6 +137,17 @@ the same way as here. Each name links to the project behind it.
 | Homelab infrastructure | Compose stacks, GitOps manifests and runbooks. Lives in self-hosted Forgejo |
 | Miscellaneous | TBA |
 
+## 🎵 Music
+
+Mostly SID: the sound chip of the Commodore 64, and still one of the most characterful synthesizers
+ever put on a circuit board.
+
+| | |
+|---|---|
+| **Legacy 8-bit hardware** | Commodore 64 and Commodore 128D, playing SID tunes the way they were written |
+| **SID** | The MOS 6581 and 8580 chips: three voices, one analogue filter, endless character |
+| **sammichSID** | A MIDIbox SID synthesizer built around real SID chips, played over MIDI |
+
 <div align="center">
 
 <picture>
