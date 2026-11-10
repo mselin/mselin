@@ -50,28 +50,28 @@ flowchart LR
 
 | Layer | What runs there |
 |---|---|
-| **Edge** | OPNsense, VLAN segmentation, hard-walled DMZ, Suricata IDS, CrowdSec bouncers |
-| **Remote access** | Mesh VPN only (Tailscale, moving to self-hosted NetBird). No apps published to the internet |
-| **Platform** | TrueNAS SCALE, ZFS (RAIDZ2 + SSD mirror, native encryption), Docker Compose apps kept in Git |
-| **Ingress and identity** | Traefik, Authentik (SSO / OIDC in front of everything) |
-| **Observability** | Prometheus, Alertmanager, Grafana, Loki + Alloy, Uptime Kuma, ntfy |
-| **Security** | CrowdSec, Suricata, Wazuh, Vaultwarden, OpenBao 🚧, UPS-managed graceful shutdown with NUT |
+| **Edge** | [OPNsense](https://github.com/opnsense/core), VLAN segmentation, hard-walled DMZ, [Suricata](https://github.com/OISF/suricata) IDS, [CrowdSec](https://github.com/crowdsecurity/crowdsec) bouncers |
+| **Remote access** | Mesh VPN only ([Tailscale](https://github.com/tailscale/tailscale), moving to self-hosted [NetBird](https://github.com/netbirdio/netbird)). No apps published to the internet |
+| **Platform** | [TrueNAS SCALE](https://github.com/truenas/middleware), ZFS (RAIDZ2 + SSD mirror, native encryption), Docker Compose apps kept in Git |
+| **Ingress and identity** | [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik) (SSO / OIDC in front of everything) |
+| **Observability** | [Prometheus](https://github.com/prometheus/prometheus), [Alertmanager](https://github.com/prometheus/alertmanager), [Grafana](https://github.com/grafana/grafana), [Loki](https://github.com/grafana/loki) + [Alloy](https://github.com/grafana/alloy), [Uptime Kuma](https://github.com/louislam/uptime-kuma), [ntfy](https://github.com/binwiederhier/ntfy) |
+| **Security** | [CrowdSec](https://github.com/crowdsecurity/crowdsec), [Suricata](https://github.com/OISF/suricata), [Wazuh](https://github.com/wazuh/wazuh), [Vaultwarden](https://github.com/dani-garcia/vaultwarden), [OpenBao](https://github.com/openbao/openbao) 🚧, UPS-managed graceful shutdown with [NUT](https://github.com/networkupstools/nut) |
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
-| **Kubernetes** | Talos Linux, Cilium, Flux, cert-manager, External Secrets, Renovate, Trivy. In use, with more services still to move over from the platform box |
+| **Kubernetes** | [Talos](https://github.com/siderolabs/talos) Linux, [Cilium](https://github.com/cilium/cilium), [Flux](https://github.com/fluxcd/flux2), [cert-manager](https://github.com/cert-manager/cert-manager), [External Secrets](https://github.com/external-secrets/external-secrets), [Renovate](https://github.com/renovatebot/renovate), [Trivy](https://github.com/aquasecurity/trivy). In use, with more services still to move over from the platform box |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
 
 ### App stack
 
 Everything sits behind SSO, is kept as Compose files in Git, and is grouped on a Homepage dashboard
-the same way as here.
+the same way as here. Each name links to the project behind it.
 
 | Group | Apps |
 |---|---|
-| **AI** | Ollama, LiteLLM gateway, AnythingLLM, Strata (local LLM on a GPU workstation) |
-| **Tools** | Forgejo, Nextcloud, BookStack, Trilium Notes, Joplin, Wallabag, Karakeep, Mealie, Homebox, Draw.io, Code Server, JupyterLab, pgAdmin, Syncthing, Filebrowser, Vaultwarden, Speedtest Tracker, Open Speedtest, Domain Watchdog |
-| **Media** | Jellyfin, Jellystat, Navidrome, Lyrion, Audiobookshelf, Kavita, Immich, Tdarr, MeTube |
-| **Monitoring** | Prometheus, Alertmanager, Grafana, Uptime Kuma, ntfy, Wazuh, CrowdSec, Portainer, Traefik, Authentik, AdGuard Home ×2, plus dashboards for the firewall, NAS, hypervisor, Wi-Fi controller and UPS |
-| **Home automation** | Home Assistant 📋 |
+| **AI** | [Ollama](https://github.com/ollama/ollama), [LiteLLM](https://github.com/BerriAI/litellm) gateway, [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), Strata (local LLM on a GPU workstation) |
+| **Tools** | [Forgejo](https://codeberg.org/forgejo/forgejo), [Nextcloud](https://github.com/nextcloud/server), [BookStack](https://github.com/BookStackApp/BookStack), [Trilium Notes](https://github.com/TriliumNext/Trilium), [Joplin](https://github.com/laurent22/joplin), [Wallabag](https://github.com/wallabag/wallabag), [Karakeep](https://github.com/karakeep-app/karakeep), [Mealie](https://github.com/mealie-recipes/mealie), [Homebox](https://github.com/sysadminsmedia/homebox), [Draw.io](https://github.com/jgraph/drawio), [Code Server](https://github.com/coder/code-server), [JupyterLab](https://github.com/jupyterlab/jupyterlab), [pgAdmin](https://github.com/pgadmin-org/pgadmin4), [Syncthing](https://github.com/syncthing/syncthing), [Filebrowser](https://github.com/filebrowser/filebrowser), [Vaultwarden](https://github.com/dani-garcia/vaultwarden), [Speedtest Tracker](https://github.com/alexjustesen/speedtest-tracker), [Open Speedtest](https://github.com/openspeedtest/Speed-Test), [Domain Watchdog](https://github.com/maelgangloff/domain-watchdog) |
+| **Media** | [Jellyfin](https://github.com/jellyfin/jellyfin), [Jellystat](https://github.com/CyferShepard/Jellystat), [Navidrome](https://github.com/navidrome/navidrome), [Lyrion](https://github.com/LMS-Community/slimserver), [Audiobookshelf](https://github.com/advplyr/audiobookshelf), [Kavita](https://github.com/Kareadita/Kavita), [Immich](https://github.com/immich-app/immich), [Tdarr](https://github.com/HaveAGitGat/Tdarr), [MeTube](https://github.com/alexta69/metube) |
+| **Monitoring** | [Prometheus](https://github.com/prometheus/prometheus), [Alertmanager](https://github.com/prometheus/alertmanager), [Grafana](https://github.com/grafana/grafana), [Uptime Kuma](https://github.com/louislam/uptime-kuma), [ntfy](https://github.com/binwiederhier/ntfy), [Wazuh](https://github.com/wazuh/wazuh), [CrowdSec](https://github.com/crowdsecurity/crowdsec), [Portainer](https://github.com/portainer/portainer), [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik), [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) ×2, plus dashboards for the firewall, NAS, hypervisor, Wi-Fi controller and UPS |
+| **Home automation** | [Home Assistant](https://github.com/home-assistant/core) 📋 |
 
 <sub>🚧 in progress · 📋 planned</sub>
 
