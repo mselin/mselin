@@ -145,7 +145,7 @@ ever put on a circuit board.
 | | |
 |---|---|
 | **Legacy 8-bit hardware** | Commodore 64 and Commodore 128D, playing SID tunes the way they were written |
-| **SID** | The MOS 6581 and 8580 chips: three voices, one analogue filter, endless character |
+| **SID** | The MOS 8580 chip: three voices, one analogue filter, endless character |
 | **sammichSID** | A MIDIbox SID synthesizer built around real SID chips, played over MIDI |
 
 <div align="center">
