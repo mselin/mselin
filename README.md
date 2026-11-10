@@ -133,6 +133,7 @@ the same way as here. Each name links to the project behind it.
 | Project | What it is |
 |---|---|
 | Homelab infrastructure | Compose stacks, GitOps manifests and runbooks. Lives in self-hosted Forgejo |
+| Miscellaneous | TBA |
 
 <div align="center">
 
