@@ -62,6 +62,7 @@ flowchart LR
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
 | **Kubernetes** | [Talos](https://github.com/siderolabs/talos) Linux, [Cilium](https://github.com/cilium/cilium), [Flux](https://github.com/fluxcd/flux2), [cert-manager](https://github.com/cert-manager/cert-manager), [External Secrets](https://github.com/external-secrets/external-secrets), [Renovate](https://github.com/renovatebot/renovate), [Trivy](https://github.com/aquasecurity/trivy) |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
+| **Shell and dotfiles** | [zsh](https://github.com/zsh-users/zsh) with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), [tmux](https://github.com/tmux/tmux) with [tpm](https://github.com/tmux-plugins/tpm) plugins such as [continuum](https://github.com/tmux-plugins/tmux-continuum) and [resurrect](https://github.com/tmux-plugins/tmux-resurrect) for sessions that survive reboots, [chezmoi](https://github.com/twpayne/chezmoi) to keep dotfiles in sync across machines |
 
 ### App stack
 
@@ -104,6 +105,10 @@ the same way as here. Each name links to the project behind it.
 <img alt="Renovate" src="https://img.shields.io/badge/Renovate-0d1420?style=flat-square&logo=renovate&logoColor=white">
 <img alt="Python" src="https://img.shields.io/badge/Python-0d1420?style=flat-square&logo=python&logoColor=white">
 <img alt="Bash" src="https://img.shields.io/badge/Bash-0d1420?style=flat-square&logo=gnubash&logoColor=white">
+<img alt="zsh" src="https://img.shields.io/badge/zsh-0d1420?style=flat-square&logo=zsh&logoColor=white">
+<img alt="Oh My Zsh" src="https://img.shields.io/badge/Oh_My_Zsh-0d1420?style=flat-square&logo=ohmyzsh&logoColor=white">
+<img alt="tmux" src="https://img.shields.io/badge/tmux-0d1420?style=flat-square&logo=tmux&logoColor=white">
+<img alt="chezmoi" src="https://img.shields.io/badge/chezmoi-0d1420?style=flat-square&logo=chezmoi&logoColor=white">
 <img alt="llama-swap" src="https://img.shields.io/badge/llama--swap-0d1420?style=flat-square">
 <img alt="LiteLLM" src="https://img.shields.io/badge/LiteLLM-0d1420?style=flat-square">
 <img alt="AnythingLLM" src="https://img.shields.io/badge/AnythingLLM-0d1420?style=flat-square">
