@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/header.svg" alt="Mika Selin: DevOps engineer and homelab builder" width="840">
+<img src="assets/header.svg" alt="Mika Selin: full-stack and DevOps engineer, homelab builder" width="840">
 
 <br>
 
@@ -11,7 +11,8 @@
 
 ## 👋 Hi
 
-I build and run infrastructure for a living, and then go home and do it again for fun. Most of my
+I build software and run the infrastructure under it for a living, full stack and DevOps, and then go
+home and do it again for fun. Most of my
 recent work lives in a self-hosted Forgejo, so this profile is the public window into it: how the
 lab is put together, what it runs, and the bits of code that make it out into the open.
 
@@ -64,6 +65,7 @@ flowchart LR
 | **Kubernetes** | [Talos](https://github.com/siderolabs/talos) Linux, [Cilium](https://github.com/cilium/cilium), [Flux](https://github.com/fluxcd/flux2), [cert-manager](https://github.com/cert-manager/cert-manager), [External Secrets](https://github.com/external-secrets/external-secrets), [Renovate](https://github.com/renovatebot/renovate), [Trivy](https://github.com/aquasecurity/trivy) |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
 | **Containers and dev environments** | [Docker](https://github.com/moby/moby), [Podman](https://github.com/containers/podman), [Dev Containers](https://github.com/devcontainers/spec) for reproducible, sandboxed project environments |
+| **Languages** | Python, TypeScript, Go, C#, Bash |
 | **Daily drivers** | CachyOS on the desktop for work and Linux gaming, macOS on the laptop, NixOS, and Windows, though less and less these days |
 | **Shell and dotfiles** | [zsh](https://github.com/zsh-users/zsh) with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), [tmux](https://github.com/tmux/tmux) with [tpm](https://github.com/tmux-plugins/tpm) plugins such as [continuum](https://github.com/tmux-plugins/tmux-continuum) and [resurrect](https://github.com/tmux-plugins/tmux-resurrect) for sessions that survive reboots, [chezmoi](https://github.com/twpayne/chezmoi) to keep dotfiles in sync across machines |
 
@@ -110,6 +112,9 @@ the same way as here. Each name links to the project behind it.
 <img alt="Forgejo" src="https://img.shields.io/badge/Forgejo-0d1420?style=flat-square&logo=forgejo&logoColor=white">
 <img alt="Renovate" src="https://img.shields.io/badge/Renovate-0d1420?style=flat-square&logo=renovate&logoColor=white">
 <img alt="Python" src="https://img.shields.io/badge/Python-0d1420?style=flat-square&logo=python&logoColor=white">
+<img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-0d1420?style=flat-square&logo=typescript&logoColor=white">
+<img alt="Go" src="https://img.shields.io/badge/Go-0d1420?style=flat-square&logo=go&logoColor=white">
+<img alt="C#" src="https://img.shields.io/badge/C%23-0d1420?style=flat-square&logo=dotnet&logoColor=white">
 <img alt="Bash" src="https://img.shields.io/badge/Bash-0d1420?style=flat-square&logo=gnubash&logoColor=white">
 <img alt="zsh" src="https://img.shields.io/badge/zsh-0d1420?style=flat-square&logo=zsh&logoColor=white">
 <img alt="Oh My Zsh" src="https://img.shields.io/badge/Oh_My_Zsh-0d1420?style=flat-square&logo=ohmyzsh&logoColor=white">
