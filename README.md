@@ -62,15 +62,15 @@ flowchart LR
 
 ### App stack
 
-The services that make the lab worth running, all behind SSO and kept as Compose files in Git.
+Everything sits behind SSO, is kept as Compose files in Git, and is grouped on a Homepage dashboard
+the same way as here.
 
-| Area | Apps |
+| Group | Apps |
 |---|---|
-| **Media** | Jellyfin, Navidrome, Lyrion, Audiobookshelf, Immich, Kavita, Tdarr |
-| **Productivity and docs** | Nextcloud, Forgejo, BookStack, Trilium, Joplin, Wallabag, Karakeep, Mealie, Homebox, Draw.io, Syncthing |
-| **Dev and data** | Code Server, JupyterLab, pgAdmin |
-| **Dashboards and tools** | Homepage, Portainer, Speedtest Tracker |
-| **Local AI** | Ollama, LiteLLM gateway, AnythingLLM, a GPU workstation for inference |
+| **AI** | Ollama, LiteLLM gateway, AnythingLLM, Strata (local LLM on a GPU workstation) |
+| **Tools** | Forgejo, Nextcloud, BookStack, Trilium Notes, Joplin, Wallabag, Karakeep, Mealie, Homebox, Draw.io, Code Server, JupyterLab, pgAdmin, Syncthing, Filebrowser, Vaultwarden, Speedtest Tracker, Open Speedtest, Domain Watchdog |
+| **Media** | Jellyfin, Jellystat, Navidrome, Lyrion, Audiobookshelf, Kavita, Immich, Tdarr, MeTube |
+| **Monitoring** | Prometheus, Alertmanager, Grafana, Uptime Kuma, ntfy, Wazuh, CrowdSec, Portainer, Traefik, Authentik, AdGuard Home ×2, plus dashboards for the firewall, NAS, hypervisor, Wi-Fi controller and UPS |
 | **Home automation** | Home Assistant 📋 |
 
 <sub>🚧 in progress · 📋 planned</sub>
