@@ -15,7 +15,7 @@ I build and run infrastructure for a living, and then go home and do it again fo
 recent work lives in a self-hosted Forgejo, so this profile is the public window into it: how the
 lab is put together, what it runs, and the bits of code that make it out into the open.
 
-- 🔭 **Now:** adding services to a Talos Kubernetes cluster with Flux GitOps and moving more and more workloads onto it, plus getting secrets into OpenBao
+- 🔭 **Now:** running a Talos Kubernetes cluster with Flux GitOps and moving more and more workloads onto it, plus getting secrets into OpenBao
 - 🔐 **Care about:** least privilege, encrypted backups that are actually restore-tested, boring reliability
 - 🎛️ **Also:** retro audio. C64 SID chips, MIDI and hardware synths
 
@@ -57,7 +57,7 @@ flowchart LR
 | **Observability** | Prometheus, Alertmanager, Grafana, Loki + Alloy, Uptime Kuma, ntfy |
 | **Security** | CrowdSec, Wazuh, OpenBao 🚧, UPS-managed graceful shutdown with NUT |
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads |
-| **Kubernetes** 🚧 | Talos Linux, Cilium, Flux, cert-manager, External Secrets, Renovate, Trivy. Growing: services are being added and migrated from the platform box |
+| **Kubernetes** | Talos Linux, Cilium, Flux, cert-manager, External Secrets, Renovate, Trivy. In use, with more services still to move over from the platform box |
 | **Backups** | ZFS snapshots, raw encrypted replication to a second machine, 3-2-1 with an offsite copy |
 | **Self-hosted** | Forgejo, Nextcloud, Immich, Jellyfin, Navidrome, BookStack, Home Assistant 📋 |
 | **Local AI** | Ollama, LiteLLM gateway, a GPU workstation for inference |
