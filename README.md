@@ -68,7 +68,7 @@ flowchart LR
 | **Containers and dev environments** | [Docker](https://github.com/moby/moby), [Podman](https://github.com/containers/podman), [Dev Containers](https://github.com/devcontainers/spec) for reproducible, sandboxed project environments |
 | **Offline resilience** | Built to keep working through a long internet outage: local mirrors of the important upstream repos in Forgejo, and offline copies of reference wikis such as Wikipedia and iFixit served with [Kiwix](https://github.com/kiwix/kiwix-tools) |
 | **Languages and frameworks** | [Python](https://github.com/python/cpython), [TypeScript](https://github.com/microsoft/TypeScript), [Go](https://github.com/golang/go), [C#](https://github.com/dotnet/csharplang), Bash, [Node.js](https://github.com/nodejs/node), [React](https://github.com/facebook/react) |
-| **Daily drivers** | CachyOS on the desktop for work and Linux gaming, macOS on the laptop, NixOS, and Windows, though less and less these days |
+| **Daily drivers** | [Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git) first: [CachyOS](https://cachyos.org) on the desktop for work and Linux gaming, macOS on the laptop, NixOS, and Windows, though less and less these days |
 | **Shell and dotfiles** | [zsh](https://github.com/zsh-users/zsh) with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), [tmux](https://github.com/tmux/tmux) with [tpm](https://github.com/tmux-plugins/tpm) plugins such as [continuum](https://github.com/tmux-plugins/tmux-continuum) and [resurrect](https://github.com/tmux-plugins/tmux-resurrect) for sessions that survive reboots, [chezmoi](https://github.com/twpayne/chezmoi) to keep dotfiles in sync across machines |
 
 ### App stack
@@ -88,8 +88,8 @@ the same way as here. Each name links to the project behind it.
 ## 🧰 Toolbox
 
 <p>
-<img alt="Linux" src="https://img.shields.io/badge/Linux-0d1420?style=flat-square&logo=linux&logoColor=white">
-<img alt="CachyOS" src="https://img.shields.io/badge/CachyOS-0d1420?style=flat-square&logo=cachyos&logoColor=white">
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git"><img alt="Linux" src="https://img.shields.io/badge/Linux-0d1420?style=flat-square&logo=linux&logoColor=white"></a>
+<a href="https://cachyos.org"><img alt="CachyOS" src="https://img.shields.io/badge/CachyOS-0d1420?style=flat-square&logo=cachyos&logoColor=white"></a>
 <img alt="macOS" src="https://img.shields.io/badge/macOS-0d1420?style=flat-square&logo=macos&logoColor=white">
 <img alt="Windows" src="https://img.shields.io/badge/Windows-0d1420?style=flat-square">
 <img alt="Debian" src="https://img.shields.io/badge/Debian-0d1420?style=flat-square&logo=debian&logoColor=white">
