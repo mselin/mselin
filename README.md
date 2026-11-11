@@ -56,7 +56,7 @@ flowchart LR
 | Layer | What runs there |
 |---|---|
 | **Edge** | [OPNsense](https://github.com/opnsense/core), VLAN segmentation, hard-walled DMZ with limited egress, [Suricata](https://github.com/OISF/suricata) IDS, [CrowdSec](https://github.com/crowdsecurity/crowdsec) bouncers, Ubiquiti UniFi Wi-Fi managed from the UniFi Network controller |
-| **Remote access** | Mesh VPN only ([Tailscale](https://github.com/tailscale/tailscale) and self-hosted [NetBird](https://github.com/netbirdio/netbird)). No apps published to the internet |
+| **Remote access** | [WireGuard](https://github.com/WireGuard/wireguard-tools)-based mesh VPN only ([Tailscale](https://github.com/tailscale/tailscale) and self-hosted [NetBird](https://github.com/netbirdio/netbird)). No apps published to the internet |
 | **Platform** | [TrueNAS SCALE](https://github.com/truenas), Docker Compose apps kept in Git |
 | **Storage** | [TrueNAS](https://github.com/truenas) on [ZFS](https://github.com/openzfs/zfs): RAIDZ pools, native encryption on every dataset, snapshots |
 | **Ingress and identity** | [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik) (SSO / OIDC in front of everything), [nginx](https://github.com/nginx/nginx) where raw performance matters |
