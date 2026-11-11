@@ -59,7 +59,7 @@ flowchart LR
 | **Remote access** | Mesh VPN only ([Tailscale](https://github.com/tailscale/tailscale) and self-hosted [NetBird](https://github.com/netbirdio/netbird)). No apps published to the internet |
 | **Platform** | [TrueNAS SCALE](https://github.com/truenas), Docker Compose apps kept in Git |
 | **Storage** | [TrueNAS](https://github.com/truenas) on [ZFS](https://github.com/openzfs/zfs): RAIDZ pools, native encryption on every dataset, snapshots |
-| **Ingress and identity** | [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik) (SSO / OIDC in front of everything) |
+| **Ingress and identity** | [Traefik](https://github.com/traefik/traefik), [Authentik](https://github.com/goauthentik/authentik) (SSO / OIDC in front of everything), [nginx](https://github.com/nginx/nginx) where raw performance matters |
 | **Observability** | [Prometheus](https://github.com/prometheus/prometheus), [Alertmanager](https://github.com/prometheus/alertmanager), [Grafana](https://github.com/grafana/grafana), [Loki](https://github.com/grafana/loki) + [Alloy](https://github.com/grafana/alloy), [Uptime Kuma](https://github.com/louislam/uptime-kuma), [ntfy](https://github.com/binwiederhier/ntfy) |
 | **Security** | [CrowdSec](https://github.com/crowdsecurity/crowdsec) with [crowdsec-blocklist-import](https://github.com/wolffcatskyy/crowdsec-blocklist-import) for extra blocklists, [Suricata](https://github.com/OISF/suricata), [Wazuh](https://github.com/wazuh/wazuh), [Vaultwarden](https://github.com/dani-garcia/vaultwarden), [OpenBao](https://github.com/openbao/openbao), UPS monitored and controlled by [NUT](https://github.com/networkupstools/nut) (upsd) with graceful shutdown |
 | **Virtualisation** | Proxmox VE for isolated DMZ workloads with limited egress |
@@ -105,6 +105,7 @@ the same way as here. Each name links to the project behind it.
 <img alt="Flux" src="https://img.shields.io/badge/Flux-0d1420?style=flat-square&logo=flux&logoColor=white">
 <img alt="Cilium" src="https://img.shields.io/badge/Cilium-0d1420?style=flat-square&logo=cilium&logoColor=white">
 <img alt="Traefik" src="https://img.shields.io/badge/Traefik-0d1420?style=flat-square&logo=traefikproxy&logoColor=white">
+<img alt="nginx" src="https://img.shields.io/badge/nginx-0d1420?style=flat-square&logo=nginx&logoColor=white">
 <img alt="Authentik" src="https://img.shields.io/badge/Authentik-0d1420?style=flat-square&logo=authentik&logoColor=white">
 <img alt="Cloudflare" src="https://img.shields.io/badge/Cloudflare-0d1420?style=flat-square&logo=cloudflare&logoColor=white">
 <img alt="NetBird" src="https://img.shields.io/badge/NetBird-0d1420?style=flat-square&logo=netbird&logoColor=white">
