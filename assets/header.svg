@@ -15,7 +15,8 @@
       text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 16px; }
       .p { fill: #3ddc97; } .c { fill: #e6edf3; } .o { fill: #9fb0c0; } .k { fill: #5cc8ff; } .a { fill: #ffb454; } .d { fill: #5b6b7b; }
       .out { opacity: 0; }
-      .cur { animation: blink 1s steps(1) infinite; }
+      .cur { animation: blink 1s steps(1) 12; }
+      @media (prefers-reduced-motion: reduce) { .cur { animation: none; } }
       @keyframes blink { 50% { opacity: 0; } }
     </style>
   </defs>

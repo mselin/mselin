@@ -140,7 +140,7 @@ dashboard.
 
 Mostly SID, the sound chip in the Commodore 64.
 
-| | |
+| What | Details |
 |---|---|
 | **Legacy 8-bit hardware** | Commodore 64 and Commodore 128D |
 | **SID** | MOS 8580 in the Commodores, 6581 in the sammichSID |
