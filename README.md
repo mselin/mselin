@@ -145,6 +145,7 @@ Mostly SID, the sound chip in the Commodore 64.
 | **Legacy 8-bit hardware** | Commodore 64 and Commodore 128D |
 | **SID** | MOS 8580 in the Commodores, 6581 in the sammichSID |
 | **sammichSID** | MIDIbox SID synth with real 6581 chips, played over MIDI |
+| **[Sleazeburg 64](https://mselin.github.io/gta-c64/)** | Top-down crime satire for the browser, done as if it ran on a C64: 320×200, 16 colours, sprites and SID-style sound. The car radio plays real .sid tunes. [Play it](https://mselin.github.io/gta-c64/) |
 
 <div align="center">
 
