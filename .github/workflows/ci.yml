@@ -24,6 +24,8 @@ jobs:
           persist-credentials: false
       - name: Test the profile games
         run: python3 -m unittest discover -s .github/scripts -v
+      - name: The games table matches the homepage's games.json
+        run: python3 .github/scripts/games_table.py --check
       - name: Check links, SVG, data files and private details
         env:
           PRIVATE_TERMS: ${{ secrets.PRIVATE_TERMS }}
