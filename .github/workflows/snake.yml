@@ -1,33 +1,39 @@
-name: Contribution snake
+name: Profile games
 
+# Plays a game of Snake on the contribution graph and a Game of Life from a random start, and publishes them
+# as animated SVGs to the output branch, which the README shows. Runs nightly, by hand, and when the game code
+# changes on main.
 on:
   schedule:
     - cron: "17 3 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/scripts/profile_games.py
+      - .github/workflows/snake.yml
 
 permissions:
   contents: write
 
+concurrency:
+  group: profile-games
+  cancel-in-progress: false
+
 jobs:
-  snake:
+  games:
+    name: Play and publish
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      # Pinned to the v3.5.0 commit; bump deliberately (Renovate/Dependabot can do it).
-      - uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/snake.svg?palette=github-light
-            dist/snake-dark.svg?palette=github-dark&color_snake=#3ddc97
-
-      # The snake sometimes runs one cell outside the grid; give it a ring of empty cells to run on.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          path: repo
           persist-credentials: false
-      - name: Put a ring of empty cells round the grid
-        run: python3 repo/.github/scripts/snake_border.py dist/snake.svg dist/snake-dark.svg
+
+      - name: Play the games and draw them
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/profile_games.py --user "${{ github.repository_owner }}" --out dist
 
       - name: Publish to the output branch
         env:
@@ -38,5 +44,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -qm "Update contribution snake"
+          git commit -qm "Update profile games"
           git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output

@@ -151,8 +151,15 @@ Mostly SID, the sound chip in the Commodore 64.
 
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mselin/mselin/output/snake.svg">
-  <img alt="Contribution graph being eaten by a snake" src="https://raw.githubusercontent.com/mselin/mselin/output/snake-dark.svg">
+  <img alt="A game of Snake on my contribution graph, played by the computer until it crashes" src="https://raw.githubusercontent.com/mselin/mselin/output/snake-dark.svg">
 </picture>
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mselin/mselin/output/life.svg">
+  <img alt="Conway's Game of Life from a random start" src="https://raw.githubusercontent.com/mselin/mselin/output/life-dark.svg">
+</picture>
+
+<sub>Snake on my contribution graph, played by the computer until it crashes. Below it, Conway's Game of Life from a random start. Both are new every night.</sub>
 
 </div>
 
