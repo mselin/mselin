@@ -30,6 +30,15 @@ class GamesTable(unittest.TestCase):
         once = games_table.rewrite(README, G)
         self.assertEqual(once, games_table.rewrite(once, G))
 
+    def test_a_game_without_play_links_to_its_source(self):
+        app = {"name": "App", "summary": "An app.", "source": "https://u/", "tags": []}
+        want = "| **[App](https://u/)** | An app. [Source](https://u/) |"
+        added = games_table.rewrite(README, G + [app])
+        self.assertEqual(added.split("\n")[5], want, "added after the other games")
+        self.assertEqual(added, games_table.rewrite(added, G + [app]), "and found again by its source link")
+        stale = added.replace("An app.", "Old words.")
+        self.assertEqual(games_table.rewrite(stale, G + [app]), added)
+
     def test_no_table_to_add_to_is_an_error(self):
         with self.assertRaises(ValueError):
             games_table.rewrite("Just words.", G)
