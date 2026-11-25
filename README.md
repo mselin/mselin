@@ -148,6 +148,7 @@ Mostly SID, the sound chip in the Commodore 64.
 | **[Sleazeburg 64](https://mselin.github.io/gta-c64/)** | Top-down crime satire for the browser, done as if it ran on a C64: 320×200, 16 colours, sprites and SID-style sound. The car radio plays real .sid tunes. [Play it](https://mselin.github.io/gta-c64/) · [Source](https://github.com/mselin/gta-c64) |
 | **[Sleazeburg 64 for the C64](https://mselin.github.io/Sleazeburg64/)** | Work in progress: the same city on a real Commodore 64, written in 6502 assembly. So far, smooth scrolling and a car to drive. Plays in the browser in VirtualC64 Web, or on the real machine. [Play it](https://mselin.github.io/Sleazeburg64/) · [Source](https://github.com/mselin/Sleazeburg64) |
 | **[Horse](https://mselin.github.io/horse/)** | A Thoroughbred sculpted, rigged, groomed and animated entirely in code: walk, trot, canter and gallop it across a golden-hour prairie, steer it and change its coat. No models, textures or motion capture. [Play it](https://mselin.github.io/horse/) · [Source](https://github.com/mselin/horse) |
+| **[SidPlayZero](https://github.com/mselin/sidplayzero)** | Work in progress: a SID player for the M5Stack CardputerZero, a pocket Linux computer with a 320×170 screen and a keyboard. It will browse the High Voltage SID Collection and play the tunes with the sidplayfp engine. So far, requirements. [Source](https://github.com/mselin/sidplayzero) |
 
 <div align="center">
 

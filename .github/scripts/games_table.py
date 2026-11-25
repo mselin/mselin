@@ -8,7 +8,8 @@ writes the profile README's game rows from it, in the same form as `games.py --m
   games_table.py             rewrite README.md's game rows from it
   --games FILE               read a local games.json instead of the published one
 
-A game's row is the table row whose first cell links to where the game is played. Standard library only.
+A game's row is the table row whose first cell links to where the game is played, or to its source when it
+has no "play" link: an app for a device, say, with nothing to play in a browser. Standard library only.
 """
 
 import json
@@ -25,13 +26,20 @@ def fetch(url=URL):
         return json.load(r)["games"]
 
 
+def link(g):
+    """Where a game's row links to: where it is played, or its source when there is nothing to play."""
+    return g.get("play") or g["source"]
+
+
 def row(g):
+    if not g.get("play"):
+        return f'| **[{g["name"]}]({g["source"]})** | {g["summary"]} [Source]({g["source"]}) |'
     return f'| **[{g["name"]}]({g["play"]})** | {g["summary"]} [Play it]({g["play"]}) · [Source]({g["source"]}) |'
 
 
 def is_row_of(line, g):
     """Whether a README line is the row for game `g`: its first cell links to where the game is played."""
-    return line.startswith("| **[") and f']({g["play"]})**' in line.split(" | ")[0]
+    return line.startswith("| **[") and f']({link(g)})**' in line.split(" | ")[0]
 
 
 def rewrite(readme, games):
